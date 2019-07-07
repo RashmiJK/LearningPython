@@ -1,2 +1,2 @@
 Learning Python 
-Documenting basics of Python
+Python: Programming efficiently

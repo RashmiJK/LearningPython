@@ -1,0 +1,18 @@
+1. How to see list of functions inside module in Python
+    dir(module_name)
+
+2. Anaconda python distribution can be installed from https://www.continuum.io/downloads
+
+3. Third party packages of interest here : 
+numpy 
+imatplotlib
+ipython - error
+jupyter notebook
+requests
+bs4
+pillow
+flask
+basemap - error
+geopy
+line_profiler - error
+memory_profiler
