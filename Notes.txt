@@ -14,5 +14,8 @@ pillow
 flask
 basemap - error
 geopy
-line_profiler - error
+line_profiler - error - used below to overcome error
+	git clone https://github.com/rkern/line_profiler.git
+	find line_profiler -name '*.pyx' -exec cython {} \;
+	cd line_profiler && pip install . --user 
 memory_profiler
