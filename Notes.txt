@@ -4,18 +4,57 @@
 2. Anaconda python distribution can be installed from https://www.continuum.io/downloads
 
 3. Third party packages of interest here : 
-numpy 
-imatplotlib
-ipython - error
-jupyter notebook
-requests
-bs4
-pillow
-flask
-basemap - error
-geopy
-line_profiler - error - used below to overcome error
+*numpy 
+*imatplotlib
+*ipython - error
+*jupyter notebook
+*requests
+*bs4
+*pillow
+*flask
+*basemap - error - used below to overcome error
+	[1] Installed brew - package manager for MAC
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	This is to install geos
+
+	[2] Then tried brew install geos
+	Seems like worked successfully
+
+	[3] pip3 install https://github.com/matplotlib/basemap/archive/v1.1.0.tar.gz
+	Shows message as success, but when imported in IDLE, it shows error
+
+	[4] Downgrade pyproj to version 1.9.6 using below command
+	pip3 install pyproj==1.9.6
+	This is done to overcome the error
+
+		>>> from mpl_toolkits.basemap import Basemap
+		Traceback (most recent call last):
+  		File "<stdin>", line 1, in <module>
+  		File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/mpl_toolkits/basemap/__init__.py", line 152, in <module>
+    		epsgf = open(os.path.join(pyproj.pyproj_datadir,'epsg'))
+		AttributeError: module 'pyproj' has no attribute 'pyproj_datadir'
+
+	[5] In python3 IDLE, run the following
+	>>> import mpl_toolkits
+	>>> import mpl_toolkits.basemap
+*geopy
+*line_profiler - error - used below to overcome error
 	git clone https://github.com/rkern/line_profiler.git
 	find line_profiler -name '*.pyx' -exec cython {} \;
 	cd line_profiler && pip install . --user 
-memory_profiler
+*memory_profiler
+
+4. String -> List : use split() method
+   List -> String : use join() method
+
+5. Negative indexing in slicing
+   -1 is the last element
+   Slicing happens until (last mentioned index -1)
+
+6. Looping through dictionaries
+   for key,value in dict.items()
+
+7. Comprehensions - They are the way to run a loop within a single line of code and
+    to collect the results of the loop in a collection
+
+8. Generators : Shirtcut to wrote functions that implement iterators   
