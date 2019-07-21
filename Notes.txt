@@ -56,5 +56,25 @@
 
 7. Comprehensions - They are the way to run a loop within a single line of code and
     to collect the results of the loop in a collection
+	List comprehension : fun/apply operation to every element(element) for element in iterator if condition(element)
 
-8. Generators : Shirtcut to wrote functions that implement iterators   
+8. Generators : Shortcut to write functions that implement iterators   
+   List comprehension : [i for i in range(20) if i%2==0]
+   Lets replace square brackets with parenthesis and assign it to a varoable, it
+   will become a iterator
+   even = (i for i in range(20) if i%2==0)
+   even is a generator object
+
+   even.__next__() : call to get next number
+
+   More complex form of iterator can be constructed using yield	
+   E.g:
+	def fibonacci():
+		f1, f2 = 0, 1
+
+		while True:
+			yield f2
+			f1, f2 = f2, f1+f2
+
+	f = fibonacci() # f is a generator/iterator
+	[next(f) for i in range (20)] # construct a list using generator, next() is the shorthand call for __next__()
